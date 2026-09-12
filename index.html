@@ -292,8 +292,7 @@
         </a>
       </div>
       <div class="p-6 md:p-8 flex flex-col min-h-0 min-w-0">
-        <h3 id="promom-title" class="text-xl md:text-2xl font-light mb-1"></h3>
-        <p id="promom-count" class="text-sm text-ink/50 mb-4"></p>
+        <h3 id="promom-title" class="text-xl md:text-2xl font-light mb-4"></h3>
         <div id="promom-list" class="md:flex-1 md:overflow-y-auto md:pr-2 min-w-0 divide-y divide-ink/10"></div>
       </div>
     </div>
@@ -3917,7 +3916,6 @@
     const promoModal = document.getElementById('promo-modal');
     const promomImage = document.getElementById('promom-image');
     const promomTitle = document.getElementById('promom-title');
-    const promomCount = document.getElementById('promom-count');
     const promomList = document.getElementById('promom-list');
 
     function openPromoModal(key) {
@@ -3926,7 +3924,6 @@
       promomImage.src = section.image;
       promomImage.alt = section.title;
       promomTitle.textContent = section.slugs.length + ' SẢN PHẨM ĐƯỢC ÁP DỤNG';
-      promomCount.textContent = section.title;
       promomList.innerHTML = section.slugs.map((slug) => {
         const p = PRODUCTS[slug];
         if (!p) return '';
