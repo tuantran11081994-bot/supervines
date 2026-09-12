@@ -162,7 +162,8 @@
     #age-gate:not(.hidden) .age-panel,
     #age-blocked:not(.hidden) .age-panel,
     #product-modal:not(.hidden) .modal-panel,
-    #story-modal:not(.hidden) .modal-panel {
+    #story-modal:not(.hidden) .modal-panel,
+    #promo-modal:not(.hidden) .modal-panel {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
@@ -264,6 +265,36 @@
           <img src="images/qr-zalo.jpg" alt="Mã QR Zalo SuperVines" class="w-28 h-28 object-contain">
           <span class="mt-3 text-xs text-ink/70 uppercase tracking-widest2">Quét QR để nhận tư vấn</span>
         </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROMO DETAIL MODAL -->
+  <div id="promo-modal" class="hidden fixed inset-0 z-[100] bg-ink/70 flex items-center justify-center px-5 py-10"
+    role="dialog" aria-modal="true" aria-labelledby="promom-title">
+    <div
+      class="modal-panel relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-paper border border-ink/15 grid md:grid-cols-2">
+      <button id="promo-modal-close" type="button" aria-label="Đóng"
+        class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center bg-paper/90 border border-ink/15">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="4" y1="4" x2="20" y2="20" />
+          <line x1="20" y1="4" x2="4" y2="20" />
+        </svg>
+      </button>
+      <div>
+        <div class="aspect-[2/3]">
+          <img id="promom-image" class="w-full h-full object-cover" src="" alt="">
+        </div>
+        <a href="https://zalo.me/0942794002" target="_blank" rel="noopener"
+          class="flex flex-col items-center bg-white pt-6 pb-6 border-t border-ink/10">
+          <img src="images/qr-zalo.jpg" alt="Mã QR Zalo SuperVines" class="w-24 h-24 object-contain">
+          <span class="mt-3 text-xs text-ink/70 uppercase tracking-widest2">Quét QR để nhận tư vấn</span>
+        </a>
+      </div>
+      <div class="p-6 md:p-8 flex flex-col min-h-0">
+        <h3 id="promom-title" class="text-xl md:text-2xl font-light mb-1"></h3>
+        <p id="promom-count" class="text-sm text-ink/50 mb-4"></p>
+        <div id="promom-list" class="md:flex-1 md:overflow-y-auto md:pr-2 divide-y divide-ink/10"></div>
       </div>
     </div>
   </div>
@@ -526,23 +557,25 @@
     <!-- FEATURED PRODUCTS ROW -->
     <section id="san-pham" class="reveal px-5 md:px-10 pb-16 md:pb-24">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        <div class="aspect-[3/4] overflow-hidden">
-          <img src="images/san-pham-featured-01.jpg" alt="Sản phẩm nổi bật" loading="lazy"
-            class="w-full h-full object-cover">
-        </div>
-        <button type="button" data-lightbox-src="images/promo-uu-dai-vang.jpg" data-lightbox-alt="Ưu đãi vàng — Mua 3 chai tặng 1 chai" class="group">
+        <button type="button" data-promo="promo-1" class="group">
+          <div class="aspect-[3/4] overflow-hidden">
+            <img src="images/san-pham-featured-01.jpg" alt="Sản phẩm nổi bật" loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+          </div>
+        </button>
+        <button type="button" data-promo="promo-2" class="group">
           <div class="aspect-[3/4] overflow-hidden">
             <img src="images/promo-uu-dai-vang.jpg" alt="Ưu đãi vàng — Mua 3 chai tặng 1 chai" loading="lazy"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
           </div>
         </button>
-        <button type="button" data-lightbox-src="images/promo-mua-2-tang-1.jpg" data-lightbox-alt="Ưu đãi hot hot — Mua 2 chai tặng 1 chai" class="group">
+        <button type="button" data-promo="promo-3" class="group">
           <div class="aspect-[3/4] overflow-hidden">
             <img src="images/promo-mua-2-tang-1.jpg" alt="Ưu đãi hot hot — Mua 2 chai tặng 1 chai" loading="lazy"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
           </div>
         </button>
-        <button type="button" data-lightbox-src="images/promo-mua-ruou-tang.jpg" data-lightbox-alt="Mua rượu tặng quà — tủ bảo quản, ly cao cấp, khui chuyên dụng" class="group">
+        <button type="button" data-promo="promo-4" class="group">
           <div class="aspect-[3/4] overflow-hidden">
             <img src="images/promo-mua-ruou-tang.jpg" alt="Mua rượu tặng quà — tủ bảo quản, ly cao cấp, khui chuyên dụng" loading="lazy"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
@@ -3774,6 +3807,48 @@
       },
     };
 
+    const PROMO_SECTIONS = {
+      'promo-1': {
+        image: 'images/san-pham-featured-01.jpg',
+        title: 'Vang Pháp trên 1 triệu',
+        slugs: [
+          'jlaurens-cremant-de-limoux', 'chateau-valmy', 'deux-roches-macon-sur-le-fil',
+          'gilles-goujon-cuvee-gourmet-rouge', 'alain-geoffroy-chablis', 'le-premier-de-valmy',
+          'seguin-manuel-bourgogne-chardonnay', 'domaine-agly-les-cimes', 'la-petite-confidence',
+          'champagne-gremillet-ambassadeur', 'champagne-gremillet-evidence', 'seguin-manuel-pommard-pezerolles',
+          'seguin-manuel-nuits-saint-georges', 'camus-latricieres-chambertin', 'champagne-gremillet-clos-rocher',
+          'camus-chambertin-grand-cru',
+        ],
+      },
+      'promo-2': {
+        image: 'images/promo-uu-dai-vang.jpg',
+        title: 'Vang Úc & New Zealand',
+        slugs: [
+          'angove-long-row-cabernet-sauvignon', 'angove-long-row-shiraz', 'tiraki-sauvignon-blanc',
+          'angove-pinot-gris', 'angove-mclaren-vale-shiraz', 'angove-clarendon-sauvignon-blanc',
+          'lost-farm-chardonnay', 'tiraki-marlborough-chardonnay', 'angove-warboys-vineyard-shiraz',
+        ],
+      },
+      'promo-3': {
+        image: 'images/promo-mua-2-tang-1.jpg',
+        title: 'Vang Chile dưới 400.000₫',
+        slugs: [
+          'ladera-syrah', 'chilano-syrah', 'one-wine-chardonnay', 'ladera-chardonnay',
+          'ladera-sauvignon-blanc', 'ladera-merlot', 'one-wine-syrah', 'one-wine-cabernet-sauvignon',
+          'chilano-cabernet-sauvignon-valle-del-maipo',
+        ],
+      },
+      'promo-4': {
+        image: 'images/promo-mua-ruou-tang.jpg',
+        title: 'Vang Ý từ 900.000₫ – 2.000.000₫',
+        slugs: [
+          'primitivo-puglia-special-edition', 'zenko-primitivo-di-manduria', 'tre-pini-15-gran-trullo-primitivo-puglia',
+          'alla-rossa-puglia', 'tre-pini-16-piscina-gioia-del-colle', 'mondo-rosso-igt-puglia',
+          'tre-pini-17-riserva-gioia-del-colle', 'q-premium-reolo-negroamaro', 'qs-extra-reolo-negroamaro',
+        ],
+      },
+    };
+
     const productModal = document.getElementById('product-modal');
     const pmImage = document.getElementById('pm-image');
     const pmThumbs = document.getElementById('pm-thumbs');
@@ -3786,6 +3861,7 @@
     let pmStoryKey = null;
     let pmCurrentKey = null;
     let storyReturnKey = null;
+    let promoReturnKey = null;
 
     function openProductModal(key) {
       const p = PRODUCTS[key];
@@ -3827,10 +3903,69 @@
 
     function closeProductModal() {
       productModal.classList.add('hidden');
+      if (promoReturnKey) {
+        const key = promoReturnKey;
+        promoReturnKey = null;
+        openPromoModal(key);
+        return;
+      }
       if (countryOverlay.classList.contains('hidden') && searchOverlay.classList.contains('hidden')) {
         document.body.classList.remove('no-scroll');
       }
     }
+
+    const promoModal = document.getElementById('promo-modal');
+    const promomImage = document.getElementById('promom-image');
+    const promomTitle = document.getElementById('promom-title');
+    const promomCount = document.getElementById('promom-count');
+    const promomList = document.getElementById('promom-list');
+
+    function openPromoModal(key) {
+      const section = PROMO_SECTIONS[key];
+      if (!section) return;
+      promomImage.src = section.image;
+      promomImage.alt = section.title;
+      promomTitle.textContent = section.slugs.length + ' SẢN PHẨM ĐƯỢC ÁP DỤNG';
+      promomCount.textContent = section.title;
+      promomList.innerHTML = section.slugs.map((slug) => {
+        const p = PRODUCTS[slug];
+        if (!p) return '';
+        return `
+          <button type="button" data-promo-item="${slug}" class="w-full flex items-center gap-3 py-3 text-left hover:bg-ink/5 transition-colors">
+            <div class="w-14 aspect-[2/3] overflow-hidden shrink-0 bg-stone/30">
+              <img src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy" class="w-full h-full object-cover">
+            </div>
+            <div class="min-w-0 flex-1">
+              <p class="text-sm truncate">${escapeHtml(p.name)}</p>
+              <p class="text-sm text-ink/60">${p.price}</p>
+            </div>
+          </button>`;
+      }).join('');
+      promomList.querySelectorAll('[data-promo-item]').forEach(el => {
+        el.addEventListener('click', () => {
+          promoReturnKey = key;
+          closePromoModal();
+          openProductModal(el.dataset.promoItem);
+        });
+      });
+      promoModal.classList.remove('hidden');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closePromoModal() {
+      promoModal.classList.add('hidden');
+      if (countryOverlay.classList.contains('hidden') && searchOverlay.classList.contains('hidden')) {
+        document.body.classList.remove('no-scroll');
+      }
+    }
+
+    document.querySelectorAll('[data-promo]').forEach(el => {
+      el.addEventListener('click', () => openPromoModal(el.dataset.promo));
+    });
+    document.getElementById('promo-modal-close').addEventListener('click', closePromoModal);
+    promoModal.addEventListener('click', (e) => {
+      if (e.target === promoModal) closePromoModal();
+    });
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
@@ -3855,7 +3990,7 @@
     pmStory.addEventListener('click', () => {
       if (!pmStoryKey) return;
       storyReturnKey = pmCurrentKey;
-      closeProductModal();
+      productModal.classList.add('hidden');
       openStoryModal(pmStoryKey);
     });
     document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
@@ -4024,6 +4159,7 @@
     document.addEventListener('keydown', (e) => {
       if (e.key !== 'Escape') return;
       if (!lightbox.classList.contains('hidden')) { closeLightbox(); return; }
+      if (!promoModal.classList.contains('hidden')) { closePromoModal(); return; }
       if (!productModal.classList.contains('hidden')) { closeProductModal(); return; }
       if (!storyModal.classList.contains('hidden')) { closeStoryModal(); return; }
       if (!searchOverlay.classList.contains('hidden')) closeSearch();
