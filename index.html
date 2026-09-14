@@ -4151,7 +4151,10 @@
             const sub = it.sub
               ? `<ul class="mt-2 space-y-1">${it.sub.map(s => `<li class="pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-ink/40">${escapeHtml(s)}</li>`).join('')}</ul>`
               : '';
-            return `<div class="py-4">${label}<p>${escapeHtml(it.text)}</p>${sub}</div>`;
+            const body = it.label
+              ? `<p>${escapeHtml(it.text)}</p>`
+              : `<p class="text-ink font-medium">${escapeHtml(it.text)}</p>`;
+            return `<div class="py-4">${label}${body}${sub}</div>`;
           }).join('');
           return `<div class="divide-y divide-ink/10 border-t border-ink/10 mt-2">${rows}</div>`;
         }
