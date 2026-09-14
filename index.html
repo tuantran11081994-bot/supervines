@@ -163,7 +163,8 @@
     #age-blocked:not(.hidden) .age-panel,
     #product-modal:not(.hidden) .modal-panel,
     #story-modal:not(.hidden) .modal-panel,
-    #promo-modal:not(.hidden) .modal-panel {
+    #promo-modal:not(.hidden) .modal-panel,
+    #info-modal:not(.hidden) .modal-panel {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
@@ -330,6 +331,24 @@
         <h3 id="sm-title" class="text-2xl font-light mb-4"></h3>
         <div id="sm-body" class="space-y-4 text-sm text-ink/70 leading-relaxed"></div>
         <p id="sm-source" class="mt-4 text-xs text-ink/40"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO MODAL -->
+  <div id="info-modal" class="hidden fixed inset-0 z-[100] bg-ink/70 flex items-center justify-center px-5 py-10"
+    role="dialog" aria-modal="true" aria-labelledby="im-title">
+    <div class="modal-panel relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-paper border border-ink/15 rounded-2xl">
+      <button id="info-modal-close" type="button" aria-label="Đóng"
+        class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center bg-paper/90 border border-ink/15 rounded-full">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="4" y1="4" x2="20" y2="20" />
+          <line x1="20" y1="4" x2="4" y2="20" />
+        </svg>
+      </button>
+      <div class="p-6 md:p-10">
+        <h3 id="im-title" class="text-xl md:text-2xl font-light mb-6 pr-10"></h3>
+        <div id="im-body" class="text-sm text-ink/70 leading-relaxed"></div>
       </div>
     </div>
   </div>
@@ -549,6 +568,47 @@
           <path d="M9 6l6 6-6 6" />
         </svg>
       </button>
+    </section>
+
+    <!-- WHAT SUPERVINES DOES -->
+    <section id="ve-supervines" class="reveal px-5 md:px-10 pb-16 md:pb-24">
+      <p class="text-xs tracking-widest2 uppercase text-wine mb-3">SuperVines</p>
+      <h2 class="text-2xl md:text-5xl font-light leading-snug max-w-2xl mb-10 md:mb-14">SuperVines làm được gì cho
+        bạn?</h2>
+      <div class="border-t border-ink/10 max-w-3xl">
+        <button type="button" data-info="gioi-thieu"
+          class="group w-full flex items-center justify-between gap-6 py-6 md:py-8 border-b border-ink/10 text-left">
+          <span class="flex items-baseline gap-4 md:gap-6">
+            <span class="text-xs text-ink/40">01</span>
+            <span
+              class="text-lg md:text-2xl font-light group-hover:text-wine transition-colors duration-300">SuperVines
+              là cái gì?</span>
+          </span>
+          <span
+            class="shrink-0 w-8 h-8 flex items-center justify-center border border-ink/15 text-ink/50 group-hover:border-wine group-hover:text-wine transition-colors duration-300">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <line x1="12" y1="4" x2="12" y2="20" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+            </svg>
+          </span>
+        </button>
+        <button type="button" data-info="gia-tri"
+          class="group w-full flex items-center justify-between gap-6 py-6 md:py-8 border-b border-ink/10 text-left">
+          <span class="flex items-baseline gap-4 md:gap-6">
+            <span class="text-xs text-ink/40">02</span>
+            <span
+              class="text-lg md:text-2xl font-light group-hover:text-wine transition-colors duration-300">SuperVines
+              làm được cái trò gì?</span>
+          </span>
+          <span
+            class="shrink-0 w-8 h-8 flex items-center justify-center border border-ink/15 text-ink/50 group-hover:border-wine group-hover:text-wine transition-colors duration-300">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <line x1="12" y1="4" x2="12" y2="20" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+            </svg>
+          </span>
+        </button>
+      </div>
     </section>
 
     <!-- HEADLINE -->
@@ -4050,6 +4110,84 @@
       if (e.target === storyModal) closeStoryModal();
     });
 
+    const INFO_CONTENT = {
+      'gioi-thieu': {
+        title: 'SuperVines là cái gì?',
+        blocks: [
+          { type: 'p', text: 'SuperVines là một cái tên — đại diện cho một team sống chết với nghề rượu vang đã 10 năm.' },
+          { type: 'p', text: 'Đam mê xây dựng một danh mục rượu vang chất lượng cực phẩm nhưng giá cả tương xứng.' },
+          { type: 'p', text: 'Định hướng phát triển nghiêm túc, bền vững với ngành rượu vang.' },
+        ],
+      },
+      'gia-tri': {
+        title: 'SuperVines làm được cái trò gì?',
+        blocks: [
+          { type: 'lead', text: 'Giải quyết nỗi sợ lớn nhất của khách hàng khi mua rượu: nguồn gốc xuất xứ.' },
+          { type: 'p', text: '100% sản phẩm của SuperVines là hàng nhập khẩu nguyên chai, đầy đủ giấy tờ hải quan, tem nhập khẩu, bản công bố theo đúng quy định của Bộ Công Thương.' },
+          {
+            type: 'list', items: [
+              { label: 'Chất lượng bảo quản', text: 'Kho lạnh 24/24 đảm bảo chất lượng rượu vang luôn ở trạng thái tốt nhất.' },
+              {
+                label: 'Chất lượng hương vị', text: '3 lớp test trước khi nhập hàng:', sub: [
+                  'Chuyên gia nước ngoài thử nếm và chọn rượu tại hầm rượu.',
+                  'Gửi mẫu về thử nếm với đội ngũ tại Việt Nam.',
+                  'Gửi mẫu cho một vài khách hàng thân thiết nếm thử.',
+                ],
+              },
+              { label: 'Tư vấn đúng nhu cầu, đúng loại, đúng giá tiền', text: 'Với kinh nghiệm làm nghề của SuperVines, tự tin có thể đề xuất giúp khách hàng có được chai rượu ưng ý.' },
+              { text: 'Đa dạng mẫu mã, đa dạng hương vị, đa dạng mức giá.' },
+              { text: 'Vận chuyển miễn phí khắp mọi tỉnh thành.' },
+              { text: 'Chính sách hoàn hủy bảo vệ khách hàng.' },
+            ],
+          },
+        ],
+      },
+    };
+
+    function renderInfoBlocks(blocks) {
+      return blocks.map(b => {
+        if (b.type === 'p') return `<p class="mb-4 last:mb-0">${escapeHtml(b.text)}</p>`;
+        if (b.type === 'lead') return `<p class="mb-4 text-ink font-medium">${escapeHtml(b.text)}</p>`;
+        if (b.type === 'list') {
+          const rows = b.items.map(it => {
+            const label = it.label ? `<p class="text-ink font-medium mb-1">${escapeHtml(it.label)}</p>` : '';
+            const sub = it.sub
+              ? `<ul class="mt-2 space-y-1">${it.sub.map(s => `<li class="pl-4 relative before:content-['–'] before:absolute before:left-0 before:text-ink/40">${escapeHtml(s)}</li>`).join('')}</ul>`
+              : '';
+            return `<div class="py-4">${label}<p>${escapeHtml(it.text)}</p>${sub}</div>`;
+          }).join('');
+          return `<div class="divide-y divide-ink/10 border-t border-ink/10 mt-2">${rows}</div>`;
+        }
+        return '';
+      }).join('');
+    }
+
+    const infoModal = document.getElementById('info-modal');
+    const imTitle = document.getElementById('im-title');
+    const imBody = document.getElementById('im-body');
+
+    function openInfoModal(key) {
+      const info = INFO_CONTENT[key];
+      if (!info) return;
+      imTitle.textContent = info.title;
+      imBody.innerHTML = renderInfoBlocks(info.blocks);
+      infoModal.classList.remove('hidden');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeInfoModal() {
+      infoModal.classList.add('hidden');
+      document.body.classList.remove('no-scroll');
+    }
+
+    document.querySelectorAll('[data-info]').forEach(el => {
+      el.addEventListener('click', () => openInfoModal(el.dataset.info));
+    });
+    document.getElementById('info-modal-close').addEventListener('click', closeInfoModal);
+    infoModal.addEventListener('click', (e) => {
+      if (e.target === infoModal) closeInfoModal();
+    });
+
     const searchOverlay = document.getElementById('search-overlay');
     const searchInput = document.getElementById('search-input');
     const searchResultsGrid = document.getElementById('search-results-grid');
@@ -4164,6 +4302,7 @@
       if (!promoModal.classList.contains('hidden')) { closePromoModal(); return; }
       if (!productModal.classList.contains('hidden')) { closeProductModal(); return; }
       if (!storyModal.classList.contains('hidden')) { closeStoryModal(); return; }
+      if (!infoModal.classList.contains('hidden')) { closeInfoModal(); return; }
       if (!searchOverlay.classList.contains('hidden')) closeSearch();
       if (!countryOverlay.classList.contains('hidden')) closeCountryOverlay();
       if (menuOpen) closeMobileMenu();
