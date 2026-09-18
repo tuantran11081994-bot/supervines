@@ -4,8 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SuperVines — Rượu vang tinh túy</title>
-  <meta name="description" content="SuperVines - Rượu vang thủ công, từ vườn nho đến bàn tiệc.">
+  <title>SuperVines — Rượu vang tinh túy, nhập khẩu chính hãng</title>
+  <meta name="description"
+    content="Rượu vang nhập khẩu chính hãng, chọn lọc từ các vùng nho danh tiếng. SuperVines giao hàng uy tín khắp Việt Nam suốt 9 năm. Đặt hàng qua Zalo 0942 794 002.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tuantran11081994-bot.github.io/supervines/">
+  <meta name="geo.region" content="VN-HN">
+  <meta name="geo.placename" content="Hà Nội">
+  <meta name="theme-color" content="#FBF8F3">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%236B1E33'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23F6F1E9' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SuperVines">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:url" content="https://tuantran11081994-bot.github.io/supervines/">
+  <meta property="og:title" content="SuperVines — Rượu vang tinh túy, nhập khẩu chính hãng">
+  <meta property="og:description"
+    content="Rượu vang nhập khẩu chính hãng, chọn lọc từ các vùng nho danh tiếng. SuperVines giao hàng uy tín khắp Việt Nam suốt 9 năm.">
+  <meta property="og:image" content="https://tuantran11081994-bot.github.io/supervines/images/hero-angove-4.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SuperVines — Rượu vang tinh túy, nhập khẩu chính hãng">
+  <meta name="twitter:description"
+    content="Rượu vang nhập khẩu chính hãng, chọn lọc từ các vùng nho danh tiếng. SuperVines giao hàng uy tín khắp Việt Nam suốt 9 năm.">
+  <meta name="twitter:image" content="https://tuantran11081994-bot.github.io/supervines/images/hero-angove-4.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -198,6 +224,41 @@
       transition: max-height .35s ease;
     }
   </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LiquorStore",
+          "@id": "https://tuantran11081994-bot.github.io/supervines/#business",
+          "name": "SuperVines",
+          "alternateName": "SHOP ONLINE SUPERVINES",
+          "url": "https://tuantran11081994-bot.github.io/supervines/",
+          "image": "https://tuantran11081994-bot.github.io/supervines/images/hero-angove-4.jpg",
+          "telephone": "+84942794002",
+          "priceRange": "₫₫",
+          "taxID": "001094024841",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kim Ngưu, Vĩnh Tuy",
+            "addressLocality": "Hà Nội",
+            "addressCountry": "VN"
+          },
+          "sameAs": [
+            "https://zalo.me/0942794002"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://tuantran11081994-bot.github.io/supervines/#website",
+          "name": "SuperVines",
+          "url": "https://tuantran11081994-bot.github.io/supervines/",
+          "publisher": { "@id": "https://tuantran11081994-bot.github.io/supervines/#business" },
+          "inLanguage": "vi-VN"
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body class="antialiased">
@@ -595,7 +656,7 @@
           <span class="flex items-baseline gap-4 md:gap-6">
             <span class="text-xs text-ink/40">02</span>
             <span class="text-lg md:text-2xl font-light text-wine">SuperVines
-              làm được cái trò gì?</span>
+              làm được gì cho bạn?</span>
           </span>
           <span
             class="shrink-0 w-8 h-8 flex items-center justify-center border border-ink/15 text-ink/50 group-hover:border-wine group-hover:text-wine transition-colors duration-300">
@@ -3551,6 +3612,32 @@
       },
     };
 
+    (function injectProductStructuredData() {
+      const siteUrl = 'https://tuantran11081994-bot.github.io/supervines/';
+      const items = Object.keys(PRODUCTS).map((slug) => {
+        const p = PRODUCTS[slug];
+        const priceNumber = Number(String(p.price).replace(/[^\d]/g, ''));
+        return {
+          '@type': 'Product',
+          'name': p.name,
+          'image': siteUrl + p.image,
+          'description': p.desc,
+          'sku': slug,
+          'offers': {
+            '@type': 'Offer',
+            'url': siteUrl + '#' + slug,
+            'priceCurrency': 'VND',
+            'price': priceNumber,
+            'availability': 'https://schema.org/InStock'
+          }
+        };
+      });
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(items);
+      document.head.appendChild(script);
+    })();
+
     const STORIES = {
       'champagne-gremillet': {
         label: 'Champagne Gremillet',
@@ -4194,7 +4281,7 @@
         ],
       },
       'gia-tri': {
-        title: 'SuperVines làm được cái trò gì?',
+        title: 'SuperVines làm được gì cho bạn?',
         blocks: [
           { type: 'lead', text: 'Giải quyết nỗi sợ lớn nhất của khách hàng khi mua rượu: nguồn gốc xuất xứ.' },
           { type: 'p', text: '100% sản phẩm của SuperVines là hàng nhập khẩu nguyên chai, đầy đủ giấy tờ hải quan, tem nhập khẩu, bản công bố theo đúng quy định của Bộ Công Thương.' },
