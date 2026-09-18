@@ -69,6 +69,7 @@
     #vang-no,
     #vang-ngot,
     #cau-chuyen,
+    #thu-vi-ruou-vang,
     #khach-hang,
     #ve-chung-toi,
     #lien-he {
@@ -535,7 +536,7 @@
           </li>
         </ul>
       </li>
-      <li><a href="#ve-chung-toi">Về chúng tôi</a></li>
+      <li><a href="#thu-vi-ruou-vang">Sự thú vị của rượu vang</a></li>
       <li id="story-menu-item">
         <div class="flex items-center justify-between gap-3">
           <a href="#cau-chuyen" class="flex-1">Câu chuyện nhà rượu</a>
@@ -2417,6 +2418,65 @@
       </div>
     </section>
 
+    <!-- SỰ THÚ VỊ CỦA RƯỢU VANG -->
+    <section id="thu-vi-ruou-vang" class="reveal px-5 md:px-10 pb-16 md:pb-24">
+      <p class="text-xs tracking-widest2 uppercase text-ink/50 mb-2">Kiến thức rượu vang</p>
+      <h2 class="text-2xl md:text-4xl font-light mb-8">Sự thú vị của rượu vang</h2>
+      <div class="relative">
+        <div id="thu-vi-track"
+          class="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar">
+          <button type="button" data-story="ruou-vang-la-gi"
+            class="w-[46%] sm:w-[32%] md:w-[22%] shrink-0 snap-start text-left group">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="images/hero-angove-3.jpg" alt="Rượu vang là gì? — kiến thức cơ bản về rượu vang" loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+            </div>
+            <p class="mt-3 text-sm">Rượu vang là gì?</p>
+            <p class="text-xs text-ink/50 uppercase tracking-wide mt-1">Kiến thức rượu vang</p>
+          </button>
+          <button type="button" data-story="nguon-goc-ruou-vang"
+            class="w-[46%] sm:w-[32%] md:w-[22%] shrink-0 snap-start text-left group">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="images/hero-vuon-nho-1.jpg" alt="Nguồn gốc tạo nên rượu vang" loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+            </div>
+            <p class="mt-3 text-sm">Nguồn gốc tạo nên rượu vang</p>
+            <p class="text-xs text-ink/50 uppercase tracking-wide mt-1">Kiến thức rượu vang</p>
+          </button>
+          <button type="button" data-story="cau-chuyen-thoi-ky-dau"
+            class="w-[46%] sm:w-[32%] md:w-[22%] shrink-0 snap-start text-left group">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="images/hero-angove-1.webp" alt="Những câu chuyện thú vị về rượu vang thời kỳ đầu" loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+            </div>
+            <p class="mt-3 text-sm">Những câu chuyện thú vị về rượu vang thời kỳ đầu</p>
+            <p class="text-xs text-ink/50 uppercase tracking-wide mt-1">Kiến thức rượu vang</p>
+          </button>
+          <button type="button" data-story="nguyen-tac-thuong-thuc"
+            class="w-[46%] sm:w-[32%] md:w-[22%] shrink-0 snap-start text-left group">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="images/hero-vuon-nho-2.jpg" alt="Nguyên tắc cơ bản khi thưởng thức rượu vang" loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+            </div>
+            <p class="mt-3 text-sm">Nguyên tắc cơ bản khi thưởng thức rượu vang</p>
+            <p class="text-xs text-ink/50 uppercase tracking-wide mt-1">Kiến thức rượu vang</p>
+          </button>
+        </div>
+        <button type="button" id="thu-vi-prev" aria-label="Xem bài trước"
+          class="absolute top-1/2 -translate-y-1/2 left-2 md:left-4 z-10 w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-wine text-cream disabled:opacity-30">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </button>
+        <button type="button" id="thu-vi-next" aria-label="Xem bài tiếp theo"
+          class="absolute top-1/2 -translate-y-1/2 right-2 md:right-4 z-10 w-9 h-9 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-wine text-cream disabled:opacity-30">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -2436,23 +2496,21 @@
           <li><a href="#vang-trang">Vang trắng</a></li>
           <li><a href="#vang-no">Vang nổ</a></li>
           <li><a href="#vang-ngot">Vang ngọt</a></li>
-          <li><a href="#">Set quà tặng</a></li>
         </ul>
       </div>
       <div>
         <p class="text-xs tracking-widest2 uppercase text-cream/50 mb-4">Về chúng tôi</p>
         <ul class="space-y-2 font-light">
           <li><a href="#cau-chuyen">Câu chuyện nhà rượu</a></li>
-          <li><a href="#">Vườn nho</a></li>
-          <li><a href="#">Blog</a></li>
         </ul>
       </div>
       <div>
         <p class="text-xs tracking-widest2 uppercase text-cream/50 mb-4">Hỗ trợ</p>
         <ul class="space-y-2 font-light">
-          <li><a href="#">Vận chuyển</a></li>
-          <li><a href="#">Đổi trả</a></li>
-          <li><a href="#">Câu hỏi thường gặp</a></li>
+          <li><button type="button" data-info="van-chuyen" class="text-left hover:text-cream transition-colors">Vận
+              chuyển</button></li>
+          <li><button type="button" data-info="doi-tra" class="text-left hover:text-cream transition-colors">Đổi
+              trả</button></li>
         </ul>
       </div>
       <div id="lien-he">
@@ -2467,19 +2525,6 @@
     </div>
 
     <div class="flex items-center gap-5 mt-14 mb-8">
-      <a href="#" aria-label="Facebook" class="text-cream/70 hover:text-cream">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M13 22v-8h2.7l.4-3H13V9.1c0-.87.24-1.46 1.5-1.46H16V5c-.27-.03-1.2-.1-2.28-.1-2.26 0-3.8 1.38-3.8 3.9V11H7.7v3H9.9v8H13z" />
-        </svg>
-      </a>
-      <a href="#" aria-label="Instagram" class="text-cream/70 hover:text-cream">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="5" />
-          <circle cx="12" cy="12" r="4" />
-          <circle cx="17.2" cy="6.8" r="1" />
-        </svg>
-      </a>
       <a href="https://zalo.me/0942794002" aria-label="Zalo"
         class="text-cream/70 hover:text-cream text-xs uppercase tracking-widest2 border border-cream/40 rounded-full px-3 py-1">Zalo</a>
     </div>
@@ -4030,7 +4075,83 @@
         ],
         source: { name: 'VyF Wine (Marcas Globales) — ảnh: Beatrice Murch / Wikimedia Commons (CC BY-SA 2.0)', url: 'https://vyfwine.com/marcas-globales/' },
       },
+      'ruou-vang-la-gi': {
+        label: 'Kiến thức rượu vang',
+        title: 'Rượu vang là gì?',
+        image: 'images/hero-angove-3.jpg',
+        excerpt: 'Rượu vang là gì, được làm từ đâu, và điều gì khiến mỗi chai khác nhau? Vài điều cơ bản trước khi bắt đầu khám phá.',
+        paragraphs: [
+          'Rượu vang là đồ uống có cồn lên men trực tiếp từ nước ép nho, không qua chưng cất — điểm khác biệt so với bia (lên men từ ngũ cốc) hay các loại rượu mạnh. Nồng độ cồn tự nhiên của rượu vang thường dao động 9 - 16% vol, tùy giống nho, khí hậu và cách ủ.',
+          'Quá trình lên men diễn ra khi nấm men chuyển hóa đường trong nước nho thành cồn và khí CO2. Với vang đỏ, nước nho được lên men cùng vỏ — nơi cho màu sắc và tannin đặc trưng. Với vang trắng, vỏ thường được tách ra trước khi lên men, giữ lại vị tươi mát.',
+          'Cùng một loại nho nhưng trồng ở hai vùng đất khác nhau có thể cho ra hai chai rượu hoàn toàn khác biệt — đó là lý do giới làm rượu hay nhắc đến "terroir": tổng hòa của đất, khí hậu, độ cao và cả bàn tay của winemaker.',
+          'Không cần phải là chuyên gia mới hiểu được rượu vang. SuperVines tin rằng cách tốt nhất để bắt đầu là uống thử, so sánh, và dần nhận ra khẩu vị của riêng mình.',
+        ],
+      },
+      'nguon-goc-ruou-vang': {
+        label: 'Kiến thức rượu vang',
+        title: 'Nguồn gốc tạo nên rượu vang',
+        image: 'images/hero-vuon-nho-1.jpg',
+        excerpt: 'Rượu vang xuất hiện từ khi nào, ở đâu? Hành trình từ vùng Caucasus cổ đại đến ly rượu trên bàn tiệc hôm nay.',
+        paragraphs: [
+          'Theo các nhà khảo cổ học, bằng chứng sớm nhất về rượu vang được tìm thấy ở khu vực Nam Caucasus và Iran ngày nay, niên đại khoảng 6.000 - 8.000 năm trước Công nguyên — nơi con người được cho là lần đầu thuần hóa giống nho hoang dã Vitis vinifera.',
+          'Từ Lưỡng Hà, rượu vang theo các tuyến thương mại lan tới Ai Cập cổ đại — nơi những hình khắc ủ rượu đã xuất hiện trên tường lăng mộ các Pharaoh — rồi tới Hy Lạp, nơi rượu vang gắn liền với thần Dionysus và trở thành một phần của triết học, thơ ca, đời sống thường nhật.',
+          'Người La Mã là những người đưa nghề trồng nho lan rộng khắp châu Âu. Nhiều vùng rượu vang nổi tiếng ngày nay ở Pháp, Tây Ban Nha, Đức đều bắt nguồn từ những vườn nho được người La Mã khai phá hơn 2.000 năm trước.',
+          'Suốt thời Trung Cổ, khi phần lớn châu Âu biến động, các tu viện Công giáo lại là nơi gìn giữ và phát triển kỹ thuật làm rượu vang — đặt nền móng cho những vùng rượu vang lừng danh như Bourgogne hay Bordeaux mà chúng ta biết ngày nay.',
+        ],
+      },
+      'cau-chuyen-thoi-ky-dau': {
+        label: 'Kiến thức rượu vang',
+        title: 'Những câu chuyện thú vị về rượu vang thời kỳ đầu',
+        image: 'images/hero-angove-1.webp',
+        excerpt: 'Từ hầm rượu 6.000 năm tuổi đến vị thần say sưa của Hy Lạp — vài giai thoại ít người biết về buổi bình minh của rượu vang.',
+        paragraphs: [
+          'Hầm rượu vang lâu đời nhất từng được khai quật nằm trong một hang động ở Armenia (di chỉ khảo cổ Areni-1), niên đại khoảng 4.100 năm trước Công nguyên — với đầy đủ bồn ép nho, bình lên men, cùng hạt nho và dây leo đã hóa thạch.',
+          'Người Ai Cập cổ đại tin rượu vang là món quà của thần Osiris, ban đầu chỉ dành cho tầng lớp quý tộc và pharaoh. Trong khi đó ở Hy Lạp, thần Dionysus (La Mã gọi là Bacchus) được tôn thờ qua các lễ hội tràn ngập rượu vang, ca múa và kịch nghệ — được xem là một trong những cội nguồn của sân khấu kịch phương Tây.',
+          'Người La Mã cổ đại có thói quen pha loãng rượu vang với nước trước khi uống. Uống rượu nguyên chất, không pha, khi đó bị xem là hành vi thiếu chừng mực — thậm chí gắn với hình ảnh của kẻ man rợ.',
+          'Thế kỷ 17, sự ra đời của chai thủy tinh bền chắc và nút bần (cork) đã thay đổi hoàn toàn cách rượu vang được bảo quản và vận chuyển — lần đầu tiên con người có thể cất giữ rượu vang lâu năm mà không lo hư hỏng, mở đường cho khái niệm "rượu vang theo niên vụ" (vintage) mà chúng ta quen thuộc ngày nay.',
+        ],
+      },
+      'nguyen-tac-thuong-thuc': {
+        label: 'Kiến thức rượu vang',
+        title: 'Nguyên tắc cơ bản khi thưởng thức rượu vang',
+        image: 'images/hero-vuon-nho-2.jpg',
+        excerpt: 'Nhiệt độ, ly rượu, cách nếm — vài nguyên tắc đơn giản giúp bạn thưởng thức rượu vang trọn vẹn hơn ngay từ ngụm đầu tiên.',
+        paragraphs: [
+          'Nhiệt độ phục vụ: vang đỏ ngon nhất ở khoảng 16 - 18°C, mát hơn nhiệt độ phòng một chút; vang trắng và vang nổ nên được ướp lạnh 6 - 10°C. Rượu quá ấm làm vị cồn nổi bật hơn hương thơm, quá lạnh lại làm hương vị bị "đóng băng", khó cảm nhận.',
+          'Chọn ly phù hợp: ly bầu lớn dành cho vang đỏ để rượu tiếp xúc nhiều không khí hơn, giúp hương thơm mở rộng; ly nhỏ, thon hơn cho vang trắng để giữ độ lạnh và sự tươi mát; ly dài (flute) cho vang nổ để giữ bọt khí lâu hơn.',
+          'Trình tự nếm rượu quen thuộc là "nhìn — ngửi — nếm": quan sát màu sắc và độ sánh của rượu, xoay nhẹ ly để hương thơm dậy lên rồi ngửi, sau đó nhấp một ngụm nhỏ và để rượu lan khắp khoang miệng trước khi nuốt.',
+          'Kết hợp món ăn: nguyên tắc cơ bản là "vị đậm đi với vị đậm, vị nhẹ đi với vị nhẹ" — vang đỏ đậm hợp với thịt đỏ, vang trắng hợp hải sản và các món nhẹ. Nhưng đây chỉ là điểm khởi đầu, đừng ngại thử nghiệm theo khẩu vị riêng.',
+          'Không có công thức nào là tuyệt đối. Những nguyên tắc trên chỉ là điểm bắt đầu — điều quan trọng nhất vẫn là chai rượu bạn thấy ngon, và khoảnh khắc bạn thưởng thức nó cùng ai.',
+        ],
+      },
     };
+
+    (function injectArticleStructuredData() {
+      const siteUrl = 'https://tuantran11081994-bot.github.io/supervines/';
+      const publishedDate = '2026-09-18';
+      const slugs = ['ruou-vang-la-gi', 'nguon-goc-ruou-vang', 'cau-chuyen-thoi-ky-dau', 'nguyen-tac-thuong-thuc'];
+      const items = slugs.map((slug) => {
+        const s = STORIES[slug];
+        return {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          'headline': s.title,
+          'description': s.excerpt,
+          'image': siteUrl + s.image,
+          'datePublished': publishedDate,
+          'dateModified': publishedDate,
+          'inLanguage': 'vi-VN',
+          'author': { '@type': 'Organization', 'name': 'SuperVines' },
+          'publisher': { '@id': siteUrl + '#business' },
+          'mainEntityOfPage': siteUrl + '#' + slug,
+          'articleBody': s.paragraphs.join('\n\n')
+        };
+      });
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(items);
+      document.head.appendChild(script);
+    })();
 
     const PROMO_SECTIONS = {
       'promo-1': {
@@ -4244,7 +4365,9 @@
       smLabel.textContent = s.label;
       smTitle.textContent = s.title;
       smBody.innerHTML = s.paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join('');
-      smSource.innerHTML = `Nguồn: <a href="${s.source.url}" target="_blank" rel="noopener" class="underline hover:text-ink/70">${escapeHtml(s.source.name)}</a>`;
+      smSource.innerHTML = s.source
+        ? `Nguồn: <a href="${s.source.url}" target="_blank" rel="noopener" class="underline hover:text-ink/70">${escapeHtml(s.source.name)}</a>`
+        : '';
       storyModal.classList.remove('hidden');
       document.body.classList.add('no-scroll');
     }
@@ -4297,8 +4420,32 @@
               },
               { label: 'Tư vấn đúng nhu cầu, đúng loại, đúng giá tiền', text: 'Với kinh nghiệm làm nghề của SuperVines, tự tin có thể đề xuất giúp khách hàng có được chai rượu ưng ý.' },
               { text: 'Đa dạng mẫu mã, đa dạng hương vị, đa dạng mức giá.' },
-              { text: 'Vận chuyển miễn phí khắp mọi tỉnh thành.' },
+              { text: 'Giao nhanh 2 - 4 giờ tại nội thành Hà Nội, miễn phí vận chuyển tỉnh thành khác cho đơn từ 6 chai.' },
               { text: 'Chính sách hoàn hủy bảo vệ khách hàng.' },
+            ],
+          },
+        ],
+      },
+      'van-chuyen': {
+        title: 'Vận chuyển',
+        blocks: [
+          { type: 'lead', text: 'Giao nhanh, giao chắc — dù bạn ở Hà Nội hay bất cứ tỉnh thành nào.' },
+          {
+            type: 'list', items: [
+              { label: 'Nội thành Hà Nội', text: 'Giao trong 2 - 4 giờ, miễn phí cho mọi đơn hàng.' },
+              { label: 'Các tỉnh thành khác', text: 'Miễn phí vận chuyển cho đơn hàng từ 6 chai trở lên. Đơn dưới 6 chai tính phí theo đơn vị vận chuyển.' },
+            ],
+          },
+        ],
+      },
+      'doi-tra': {
+        title: 'Đổi trả',
+        blocks: [
+          { type: 'lead', text: 'Đổi ý cũng được — chúng tôi không hỏi lý do.' },
+          {
+            type: 'list', items: [
+              { label: 'Trong vòng 3 ngày kể từ khi nhận hàng', text: 'Miễn phí đổi trả, không cần lý do.' },
+              { label: 'Sau 3 ngày', text: 'Mọi vấn đề cần đổi trả hàng, vui lòng liên hệ nhân viên tư vấn.' },
             ],
           },
         ],
@@ -4688,6 +4835,7 @@
     wireCarousel('vang-no-track', 'vang-no-prev', 'vang-no-next', { loop: true });
     wireCarousel('vang-ngot-track', 'vang-ngot-prev', 'vang-ngot-next', { loop: true });
     wireCarousel('cau-chuyen-track', 'cau-chuyen-prev', 'cau-chuyen-next', { loop: true });
+    wireCarousel('thu-vi-track', 'thu-vi-prev', 'thu-vi-next', { loop: true });
     wireCarousel('khach-hang-track', 'khach-hang-prev', 'khach-hang-next', { loop: true });
   </script>
 
